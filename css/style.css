@@ -68,9 +68,11 @@ img {
 .header {
     background: url("../img/header-bg.png") no-repeat center;
     background-size: cover;
-    height: 635px;
+    height: 780px;
     display: grid;
     grid-template-columns: 1fr auto;
+    grid-template-rows: 100px 1fr;
+    align-items: center;
 }
 
 .header-logo {
@@ -101,4 +103,89 @@ img {
 
 .header li + li {
     margin-left: 30px;
+}
+
+.header h2 {
+    color: white;
+    margin: 0 0 60px 200px;
+    font-size: 4em;
+}
+
+/* SIDENAV */
+.sidenav {
+    padding: 30px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+    background: linear-gradient(135deg, #ff6801, #ffbe00);
+}
+
+.sidenav li {
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.125em;
+    padding: 15px;
+}
+
+.sidenav li + li {
+    border-top: 2px solid #ff6600;
+}
+
+/* CONTEUDO */
+.conteudo {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.col-wide {
+    grid-column: 1 / -1;
+}
+
+.titulo {
+    text-align: center;
+    color: rgba(0, 0, 0, .7);
+    letter-spacing: -0.005em;
+    font-size: 1.4;
+}
+
+.imagem-1 {
+    grid-row: span 2;
+    justify-self: end;
+}
+
+
+/* ANUNCIOS */
+.anuncios {
+    grid-area: anuncios;
+    background: linear-gradient(135deg, #ff6801, #ffbe00);
+    display: grid;
+    align-content: start;
+    padding: 30px;
+    /* esse gap eh o que separa um item do outro, eh a distancia de um item para outro */
+    gap: 30px;
+    /* esse autofit eh para tentar colocar duas colunas com no minomo 150px */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    color: #fff;
+}
+
+.anuncios h2 {
+    font-size: 1.25em;
+    line-height: 1.4em;
+}
+
+.anuncios h3 {
+    font-size: 1.125em;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+.footer {
+    background: #ff6801;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
 }
