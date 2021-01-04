@@ -32,6 +32,31 @@ img {
     ;
 }
 
+@media (max-width: 1200px) {
+    .estrutura {
+        /* foi duplicado a terceira coluna pois sem ela, iria ocupar somente duas e ficar sobrando uma */
+        grid-template-areas: 
+            "header header header"
+            "sidenav conteudo conteudo"
+            "sidenav anuncios anuncios"
+            "footer footer footer"
+        ;
+    }
+}
+
+@media (max-width: 760px) { 
+    .estrutura {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+            "header"
+            "sidenav"
+            "conteudo"
+            "anuncios"
+            "footer"
+        ;
+    }
+}
+
 /* HEADER */
 
 .header {
@@ -111,6 +136,25 @@ img {
     font-size: 4em;
 }
 
+@media (max-width: 1200px) {
+    .header h2 {
+        margin: 0 0 60px 80px;
+    }
+}
+
+@media (max-width: 760px) {
+    .header-nav {
+        margin-top: 50px;
+    }
+    .header-nav ul {
+        display: block;
+    }
+    .header li + li {
+        margin-left: 0px;
+    }
+
+}
+
 /* SIDENAV */
 .sidenav {
     padding: 30px;
@@ -129,6 +173,13 @@ img {
 .sidenav li + li {
     border-top: 2px solid #ff6600;
 }
+
+@media (max-width: 760px) { 
+    .sidenav {
+        padding: 10px 0;
+    }
+}
+
 
 /* CONTEUDO */
 .conteudo {
@@ -153,7 +204,15 @@ img {
 
 .imagem-1 {
     grid-row: span 2;
-    justify-self: end;
+    align-self: end;
+}
+
+.imagem-2 {
+    align-self: end;
+}
+
+.texto {
+    max-width: 240px;
 }
 
 
@@ -182,10 +241,36 @@ img {
     margin-bottom: 10px;
 }
 
+@media (max-width: 1200px) {
+    .anuncios h2 {
+        grid-column: 1 / -1;   
+        text-align: center;
+    }
+}
+
 /* FOOTER */
 .footer {
     background: #ff6801;
     color: #fff;
     text-align: center;
     padding: 30px;
+}
+
+.social {
+    margin-top: 30px;
+}
+
+.redes-sociais {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.redes-sociais li {
+    padding: 10px;
+}
+
+.redes-sociais img {
+    width: 40px;
 }
